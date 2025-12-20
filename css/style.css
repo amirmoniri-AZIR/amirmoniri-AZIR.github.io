@@ -142,12 +142,13 @@ a:hover, a:focus {
 }
 
 /* Subtle outlines for main sections inside content */
-.section, .card {
+.section, .card, section {
     background: var(--content-bg);
     border: 1px solid var(--border);
-    padding: 18px;
-    border-radius: 8px;
-    margin: 16px 0;
+    padding: 20px;
+    border-radius: 12px;
+    margin: 18px 0;
+    box-shadow: 0 8px 22px rgba(8,51,90,0.04);
 }
 
 /* Projects layout: grid on wide screens, single column on small */
@@ -158,10 +159,11 @@ a:hover, a:focus {
     align-items: start;
 }
 .project {
-    padding: 16px;
+    padding: 18px;
     border: 1px solid var(--border);
-    border-radius: 10px;
+    border-radius: 12px;
     background: var(--content-bg);
+    box-shadow: 0 6px 18px rgba(8,51,90,0.035);
 }
 .project h3 { margin-top: 0; margin-bottom: 8px; }
 
@@ -188,7 +190,23 @@ section, .project, main h1, main img {
 }
 .project:hover, .project:focus-within {
     transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(8,51,90,0.06);
+    box-shadow: 0 16px 40px rgba(8,51,90,0.08);
+}
+
+/* Make sure headings inside cards are readable and balanced */
+.section h2, section h2 {
+    margin-top: 0;
+    margin-bottom: 0.6em;
+    font-size: 1.1rem;
+    color: var(--blue-dark);
+}
+
+/* Reduce padding slightly on narrow screens to avoid overcrowding */
+@media (max-width: 640px) {
+    .section, .card, section, .project {
+        padding: 14px;
+        margin: 12px 0;
+    }
 }
 
 /* Improve link/nav hover smoothness */
