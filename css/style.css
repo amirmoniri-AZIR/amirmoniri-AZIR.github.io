@@ -278,6 +278,33 @@ main ul li:hover {
     padding-left: 2px;
 }
 
+/* Maintenance page styles */
+.maintenance-card {
+    background: var(--content-bg);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 18px 0;
+    box-shadow: 0 8px 22px rgba(8,51,90,0.04);
+    border-top: 2px solid rgba(30,111,191,0.06);
+    opacity: 0;
+    animation: fadeInUp var(--motion-duration) var(--motion-ease) both;
+    animation-delay: 80ms;
+}
+
+.navigation-section {
+    background: var(--content-bg);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 18px 0;
+    box-shadow: 0 8px 22px rgba(8,51,90,0.04);
+    border-top: 2px solid rgba(30,111,191,0.06);
+    opacity: 0;
+    animation: fadeInUp var(--motion-duration) var(--motion-ease) both;
+    animation-delay: 200ms;
+}
+
 /* Ensure consistent borders and radii */
 .card, .section, .project, main { border-radius: 10px; }
 
