@@ -527,8 +527,7 @@ a:focus, button:focus, input:focus, textarea:focus {
     animation: fadeInUp var(--motion-duration) var(--motion-ease) both;
     animation-delay: var(--delay-4);
 }
-    box-shadow: 0 6px 18px rgba(8,51,90,0.03);
-}
+
 @media (max-width: 640px) {
     .model-gallery { flex-direction: column; gap: 10px; }
     .model-gallery img { max-width: 100%; }
