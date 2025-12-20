@@ -337,3 +337,23 @@ a:focus, button:focus, input:focus, textarea:focus {
 @media (min-width: 1000px) {
     main { max-width: 960px; }
 }
+
+/* Model/gallery images: side-by-side on wider screens, stacked on small screens */
+.model-gallery {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+.model-gallery img {
+    width: 100%;
+    max-width: 48%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 18px rgba(8,51,90,0.03);
+}
+@media (max-width: 640px) {
+    .model-gallery { flex-direction: column; gap: 10px; }
+    .model-gallery img { max-width: 100%; }
+}
