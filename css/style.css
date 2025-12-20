@@ -1,34 +1,112 @@
+:root {
+    --blue-primary: #1E6FBF; /* primary blue */
+    --blue-light: #EAF4FF;   /* subtle background blue */
+    --blue-dark: #08335A;    /* dark accent */
+    --text-color: #0F2540;
+    --muted: #6B7A89;
+    --content-bg: #FFFFFF;
+    --border: rgba(8,51,90,0.08);
+}
+
 body {
     line-height: 1.6;
     font-family: Arial, sans-serif;
+    background: var(--blue-light);
+    color: var(--text-color);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
+/* Page container */
 main {
     max-width: 800px;
-    margin: 0 auto;
-    padding: 20px 15px;
+    margin: 24px auto;
+    padding: 28px 20px;
+    background: var(--content-bg);
+    border: 1px solid var(--border);
+    box-shadow: 0 6px 20px rgba(8,51,90,0.04);
+    border-radius: 10px;
 }
 
-main img {
+main img,
+.content img {
     max-width: 200px;
     border-radius: 50%;
     display: block;
     margin: 30px auto;
+    border: 4px solid rgba(30,111,191,0.08);
 }
 
 main h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 18px;
+    color: var(--blue-dark);
 }
 
+/* Content wrapper (keeps existing layout but with new styling) */
 .content {
     max-width: 800px;
     margin: 0 auto;
     padding: 0 15px;
 }
-.content img {
-    max-width: 200px;
-    border-radius: 50%;
-    display: block;
-    margin: 20px auto;
+
+/* Header & Footer (no HTML changes required) */
+header,
+footer {
+    color: var(--blue-dark);
+    background: linear-gradient(180deg, rgba(30,111,191,0.06), transparent);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid transparent;
+    padding: 12px 0;
+}
+
+/* Headings and accents */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--blue-dark);
+    margin-top: 1.1em;
+    margin-bottom: 0.4em;
+}
+
+p, li {
+    color: var(--text-color);
+}
+
+/* Links */
+a {
+    color: var(--blue-primary);
+    text-decoration: none;
+    transition: color 150ms ease, text-decoration-color 150ms ease;
+}
+a:hover, a:focus {
+    color: var(--blue-dark);
+    text-decoration: underline;
+    outline: none;
+}
+
+/* Subtle outlines for main sections inside content */
+.section, .card {
+    background: var(--content-bg);
+    border: 1px solid var(--border);
+    padding: 18px;
+    border-radius: 8px;
+    margin: 16px 0;
+}
+
+/* Accessibility: focus outlines */
+a:focus, button:focus, input:focus, textarea:focus {
+    box-shadow: 0 0 0 3px rgba(30,111,191,0.12);
+    border-radius: 4px;
+}
+
+/* Muted text */
+.muted {
+    color: var(--muted);
+}
+
+/* Small utility */
+.center { text-align: center; }
+
+/* Keep things tidy on small screens */
+@media (max-width: 640px) {
+    main { margin: 16px; padding: 18px; }
 }
