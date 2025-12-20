@@ -51,13 +51,58 @@ main h1 {
 }
 
 /* Header & Footer (no HTML changes required) */
-header,
-footer {
+/* Header */
+header {
+    background: linear-gradient(180deg, rgba(30,111,191,0.04), transparent);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 0;
+}
+
+/* Navigation: center and space links evenly */
+header nav { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 28px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+header nav li { margin: 0; }
+header nav a {
     color: var(--blue-dark);
-    background: linear-gradient(180deg, rgba(30,111,191,0.06), transparent);
+    display: inline-block;
+    padding: 8px 10px;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.2px;
+}
+header nav a:hover,
+header nav a:focus {
+    background: rgba(30,111,191,0.08);
+    color: var(--blue-dark);
+    text-decoration: none;
+    outline: none;
+}
+
+/* Footer */
+footer {
+    color: var(--muted);
+    text-align: center;
+    font-size: 0.95rem;
+    padding: 14px 16px;
     border-top: 1px solid var(--border);
-    border-bottom: 1px solid transparent;
-    padding: 12px 0;
+    background: linear-gradient(0deg, rgba(30,111,191,0.02), transparent);
+}
+
+footer p { margin: 0; }
+
+/* Responsive tweaks for nav */
+@media (max-width: 640px) {
+    header nav ul { gap: 12px; }
+    header nav a { padding: 8px 8px; font-size: 0.95rem; }
 }
 
 /* Headings and accents */
