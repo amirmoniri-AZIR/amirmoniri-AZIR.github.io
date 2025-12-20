@@ -305,6 +305,49 @@ footer nav {
     border-color: rgba(30,111,191,0.12);
 }
 
+/* Project with image layout */
+.project-with-image {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+    background: var(--content-bg);
+    border: 1px solid var(--border);
+    padding: 20px;
+    border-radius: 12px;
+    margin: 18px 0;
+    box-shadow: 0 8px 22px rgba(8,51,90,0.04);
+    border-top: 2px solid rgba(30,111,191,0.06);
+    animation: fadeInUp var(--motion-duration) var(--motion-ease) both;
+    animation-delay: var(--delay-4);
+}
+
+.project-content h3 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1.15rem;
+    color: var(--blue-dark);
+}
+
+.project-image {
+    margin: 0;
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(8,51,90,0.1);
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 8px;
+    transition: transform 360ms var(--motion-ease);
+}
+
+.project-with-image:hover .project-image img {
+    transform: scale(1.03);
+}
+
 /* ============================================
    UTILITIES
    ============================================ */
@@ -429,6 +472,12 @@ a:focus, button:focus, input:focus, textarea:focus {
     
     .model-gallery img {
         max-width: 100%;
+    }
+    
+    /* Project with image - stack vertically on mobile */
+    .project-with-image {
+        grid-template-columns: 1fr;
+        gap: 15px;
     }
 }
 
